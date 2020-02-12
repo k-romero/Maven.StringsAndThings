@@ -35,5 +35,12 @@ public class CountTripleTest {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void countTripleTest4(){
+        Integer expected = 4;
+        Integer actual = stringsAndThings.countTriple("xxxabyyyyxxxcd");
+        Assert.assertEquals(expected, actual);
+    }
+
 
 }

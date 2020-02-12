@@ -41,4 +41,12 @@ public class CountYZTest {
         Integer actual = stringsAndThings.countYZ(input);
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void countYZTest4 (){
+        String input = "day fyyyz yyy zzz paranoia about my methods do you like pez the stop motion artist?";
+        Integer expected = 6;
+        Integer actual = stringsAndThings.countYZ(input);
+        Assert.assertEquals(expected, actual);
+    }
 }

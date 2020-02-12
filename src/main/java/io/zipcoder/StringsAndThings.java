@@ -15,7 +15,15 @@ public class StringsAndThings {
      *           countYZ("day fyyyz"); // Should return 2
      */
     public Integer countYZ(String input){
-        return null;
+        int result = 0;
+        String[] individualWords = input.split(" ");
+        for (String word: individualWords) {
+            char lastCharacter = word.charAt(word.length()-1);
+            if (lastCharacter == 'y' || lastCharacter == 'z' ){
+                result++;
+            }
+        }
+        return result;
     }
 
     /**
@@ -28,7 +36,12 @@ public class StringsAndThings {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove){
-        return null;
+        String result = "";
+        if(base.contains(remove)){
+            result=base.replace(remove,"");
+        } else result = base;
+
+        return result;
     }
 
     /**
@@ -40,7 +53,23 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
+        boolean result;
+        int isCounter = 0;
+        int notCounter = 0;
+        char[] characterArrayOfInput = input.toCharArray();
+        for(int i = 0; i < input.length(); i++){
+
+            //I GET THIS IS FUCKING RIDICULOUS BUT THIS IS HOW MY BRAIN IS WORKING  :?
+            if(i+1 < input.length()-1 && characterArrayOfInput[i] == 'i' && characterArrayOfInput[i+1] == 's'){
+                isCounter++;
+            } else if (i+1 < input.length()-1 && characterArrayOfInput[i] == 'n' && characterArrayOfInput[i+1] == 'o' && characterArrayOfInput[i+2] == 't'){
+                notCounter++;
+            }
+        }
+        if (isCounter == notCounter){
+            result = true;
+        } else {result = false;}
+        return result;
     }
 
     /**
@@ -50,10 +79,21 @@ public class StringsAndThings {
      *           gHappy("xxgxx") // Should return  false
      *           gHappy("xxggyygxx") // Should return  false
      */
-    public Boolean gIsHappy(String input){
-        return null;
-    }
 
+
+    public Boolean gIsHappy(String input){
+        boolean result = false;
+        char charToCheck = 'g';
+        char[] characterArrayOfInput = input.toCharArray();
+        for(int i = 0; i < input.length(); i++){
+            if(characterArrayOfInput[i] == charToCheck){
+                if ((characterArrayOfInput[i + 1] == charToCheck) || (characterArrayOfInput[i - 1] == charToCheck)) {
+                    result = true;
+                } else {result = false;}
+            }
+        }
+        return result;
+    }
 
     /**
      * We'll say that a "triple" in a string is a char appearing three times in a row.
@@ -62,7 +102,21 @@ public class StringsAndThings {
      *            countTriple("xxxabyyyycd") // Should return 3
      *            countTriple("a") // Should return 0
      */
+
+
     public Integer countTriple(String input){
-        return null;
+        int result = 0;
+        char[] characterArrayOfInput = input.toCharArray();
+        for(int i = 0; i < input.length()-1; i++){
+
+            if(i+2 < input.length()){
+                char currentChar = characterArrayOfInput[i];
+               if (currentChar == characterArrayOfInput[i+1] && currentChar == characterArrayOfInput[i+2]){
+                   result++;
+               }
+            }
+
+        }
+        return result;
     }
 }
