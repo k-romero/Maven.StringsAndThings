@@ -58,8 +58,6 @@ public class StringsAndThings {
         int notCounter = 0;
         char[] characterArrayOfInput = input.toCharArray();
         for(int i = 0; i < input.length(); i++){
-
-            //I GET THIS IS FUCKING RIDICULOUS BUT THIS IS HOW MY BRAIN IS WORKING  :?
             if(i+1 < input.length()-1 && characterArrayOfInput[i] == 'i' && characterArrayOfInput[i+1] == 's'){
                 isCounter++;
             } else if (i+1 < input.length()-1 && characterArrayOfInput[i] == 'n' && characterArrayOfInput[i+1] == 'o' && characterArrayOfInput[i+2] == 't'){
