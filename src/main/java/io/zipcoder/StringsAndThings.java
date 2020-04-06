@@ -113,7 +113,6 @@ public class StringsAndThings {
                    result++;
                }
             }
-
         }
         return result;
     }
